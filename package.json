@@ -1,0 +1,57 @@
+{
+  "name": "WordpressWebsiteVulnerableCheck",
+  "version": "1.2.0",
+  "description": "Check Vulnerability inside for WordPress",
+  "preferGlobal": true,
+  "main": "index.js",
+  "bin": {
+    "wpcheck": "./index.js"
+  },
+  "files": [
+    "lib",
+    "config",
+    "index.js"
+  ],
+  "keywords": [
+    "wordpress",
+    "security",
+    "vulnerability",
+    "scanner",
+    "scan"
+  ],
+  "author": {
+    "name": "Javed Iqbal",
+    "url": "https://github.com/javedboqo"
+  },
+  "homepage": "https://github.com/javedboqo",
+  "repository": "javedboqo/WordPressWebsiteScan_NodeJS",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "colors": "^1.1.2",
+    "express": "^4.17.1",
+    "minimist": "^1.2.0",
+    "node-fetch": "^2.6.1",
+    "pad-end": "^1.0.2",
+    "prepend-http": "^2.0.0",
+    "request": "^2.84.0",
+    "rtrim": "^1.0.0",
+    "semver": "^5.5.0",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "child-process-promise": "^2.2.1",
+    "eslint": "^5.9.0",
+    "eslint-plugin-node": "^8.0.0",
+    "mocha": "^5.0.1",
+    "must": "^0.13.4"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && mocha --no-timeouts"
+  },
+  "engines": {
+    "node": ">=8.10.0"
+  }
+}
