@@ -14,7 +14,10 @@ app.post('/', async (req, res) => {
         "success": false,
         "error": ""
     };
-    if (!body.url) {
+    if (!body.auth || body.auth!='5CANW0RDPRE552022') {
+        info.error="Auth is missing";        
+    }
+    else if (!body.url) {
         info.error="Url is missing";        
     }
     else {
