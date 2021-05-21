@@ -9,13 +9,22 @@ const port = process.env.PORT || 3000;
 
 app.post('/', async (req, res) => {
     const body = req.body;
-    // console.log(body.url);
-    const info = await require('./lib/app').wpcheck(
-        require('minimist')(
-            body.url,
-            require('./config/minimist.json')
-        )
-    );
+    console.log(body.url);
+    let info  =  {
+        "success": false,
+        "error": ""
+    };
+    if (!body.url) {
+        info.error="Url is missing";        
+    }
+    else {
+        info = await require('./lib/app').wpcheck(
+            require('minimist')(
+                [body.url],
+                require('./config/minimist.json')
+            )
+        );
+    }
     res.json(info);
 })
 
