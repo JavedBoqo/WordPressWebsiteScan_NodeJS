@@ -18,7 +18,7 @@ app.post('/', async (req, res) => {
         info.error="Auth is missing";        
     }
     else if (!body.url) {
-        info.error="Url is missing";        
+        info.error="Url is missing";               
     }
     else {
         info = await require('./lib/app').wpcheck(
@@ -27,6 +27,8 @@ app.post('/', async (req, res) => {
                 require('./config/minimist.json')
             )
         );
+        info.scan_year = new Date().getFullYear()     
+        info.scan_month = new Date().getMonth()+1 
     }
     res.json(info);
 })
